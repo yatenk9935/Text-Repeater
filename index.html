@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        div {
+            box-shadow: 0 1px 3px 5px rgba(0, 0, 0, 0.15);
+            border-radius: 1rem;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+            border: 1px solid gainsboro;
+        }
+
+        #Nums {
+            border: 1px solid lightgray;
+            margin-bottom: 5px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: inline-block;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="">Type Word(s), Sentence or Paragraph below</label>
+        <br>
+        <textarea rows="4" type="text" placeholder="Enter any text" id="Text"></textarea>
+        <br>
+        <label for="">How many times?</label>
+        <br>
+        <input type="number" placeholder="1 2 3" id="Nums">
+        <br>
+        <input onclick="generator()" type="submit" value="Generate My Text">
+    </div>
+    <script>
+        function generator() {
+            let txt = document.getElementById('Text').value;
+            let num = document.getElementById('Nums').value;
+            for (let lim = 0; lim < num; lim++) {
+                document.write(txt, "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>
